@@ -27,12 +27,14 @@ function M.report()
 
    local Popup = require("nui.popup")
    local event = require("nui.utils.autocmd").event
+   local config = require("hardtime.config").config
+  -- TODO Update Readme (check nui for those options)
 
    local popup = Popup({
       enter = true,
       focusable = true,
       border = {
-         style = "rounded",
+         style = config.border,
          text = {
             top = "Hardtime Report",
             top_align = "center",
@@ -40,9 +42,10 @@ function M.report()
       },
       position = "50%",
       size = {
-         width = "40%",
-         height = "60%",
+         width = config.width,
+         height = config.height,
       },
+      max_width = 20,
    })
 
    popup:mount()
